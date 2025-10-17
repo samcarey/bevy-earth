@@ -1,0 +1,61 @@
+[package]
+name = "bevy-earth"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = { package = "bevy", version = "0.10.1", default-features = false, features = [
+    "android_shared_stdcxx",
+    "animation",
+    "bevy_animation",
+    "bevy_asset",
+    "bevy_core_pipeline",
+    "bevy_gilrs",
+    "bevy_gltf",
+    "bevy_pbr",
+    "bevy_render",
+    "bevy_scene",
+    "bevy_sprite",
+    "bevy_text",
+    "bevy_ui",
+    "bevy_winit",
+    "filesystem_watcher",
+    "hdr",
+    "ktx2",
+    "png",
+    "tonemapping_luts",
+    "vorbis",
+    "x11",
+    "wayland",
+    "zstd",
+] }
+bevy-inspector-egui = "0.18.0"
+bevy_egui = "0.20.0"
+bevy_mod_picking = { version = "0.14.0", features = [
+    "bevy_picking_egui",
+    "backend_raycast",
+    "bevy_picking_selection",
+    "bevy_picking_ui",
+    "debug",
+    "selection",
+], default-features = false }
+bevy_panorbit_camera = { version = "0.5", features = ["bevy_egui"] }
+bevy_prototype_debug_lines = { version = "0.10", features = ["3d"] }
+gdal = { version = "0.15.0", features = ["bindgen"] }
+geotiff = "0.0.2"
+rand = "0.8.5"
+triangulate = "0.2.0"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[features]
+default = ["bevy/dynamic_linking"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
