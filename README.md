@@ -1,4 +1,4 @@
-# Bevy Earth
+# [Bevy Earth](https://github.com/samcarey/bevy-earth)
 
 A 3D model of Earth for the [Bevy game engine](https://bevy.org).
 
